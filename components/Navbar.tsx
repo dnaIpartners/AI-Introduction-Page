@@ -51,45 +51,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark = false }) => {
               IPARTNERS i-PIE
             </span>
           </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleDesktopNavigate(item.page)}
-                className={`text-[15px] font-medium transition-colors duration-500 flex items-center gap-1 ${textColorMuted}`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Right Action */}
-          <div className="hidden md:block">
-            <button 
-              onClick={() => window.open('https://www.ipartners.co.kr', '_blank')}
-              className={`px-6 py-2.5 text-[15px] font-medium rounded-full transition-all duration-500 ${btnClass}`}
-            >
-              IPARTNERS Co.
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className={`md:hidden p-2 ${textColor} transition-colors duration-500`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )}
-          </button>
         </div>
       </nav>
 
@@ -110,12 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark = false }) => {
           <div 
             className={`w-full h-px bg-black/10 my-6 transform ${isMobileMenuOpen ? 'scale-x-100' : 'scale-x-0'} transition-transform duration-500 delay-300 origin-left`} 
           />
-          <button 
-            onClick={() => window.open('https://www.ipartners.co.kr', '_blank')}
-            className={`text-lg font-medium text-black text-left transform ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} transition-all duration-500 delay-500`}
-          >
-            IPARTNERS Co.
-          </button>
+          
         </div>
       </div>
     </>
